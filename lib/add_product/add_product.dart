@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'package:advert/components/custom_text_field.dart';
 import 'package:advert/constants/app_sizes.dart';
 import 'package:advert/services/date_time_service.dart';
 
@@ -31,7 +32,14 @@ class AddProduct extends StatelessWidget {
             ),
             AppSizes.height10,
             CustomTextField(
-              hintText: 'description',
+              hintText: "description",
+              controller: _description,
+              maxLines: 5,
+            ),
+            CustomTextField(
+              prefixIcon: Center(
+                  child: IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.photo_camera))),
               controller: _description,
               maxLines: 5,
             ),
@@ -61,33 +69,6 @@ class AddProduct extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    Key? key,
-    required this.hintText,
-    this.controller,
-    this.maxLines,
-    this.onTap,
-  }) : super(key: key);
-  final String hintText;
-  final TextEditingController? controller;
-  final int? maxLines;
-  final void Function()? onTap;
-  @override
-  Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      onTap: onTap,
-      maxLines: maxLines,
-      decoration: InputDecoration(
-        border: const OutlineInputBorder(),
-        filled: true,
-        hintText: hintText,
       ),
     );
   }
