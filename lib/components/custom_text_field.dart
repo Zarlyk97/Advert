@@ -10,16 +10,19 @@ class CustomTextField extends StatelessWidget {
     this.maxLines,
     this.onTap,
     this.prefixIcon,
+    this.focusNode,
   }) : super(key: key);
   final String? hintText;
   final TextEditingController? controller;
   final int? maxLines;
   final void Function()? onTap;
   final Widget? prefixIcon;
+  final FocusNode? focusNode;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
+      focusNode: focusNode,
       onTap: onTap,
       maxLines: maxLines,
       decoration: InputDecoration(
