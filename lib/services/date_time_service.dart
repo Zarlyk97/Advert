@@ -21,7 +21,7 @@ class DateTimeService {
               onDateTimeChanged: onDateTimeChanged,
               initialDateTime: DateTime.now(),
               minimumYear: 2000,
-              maximumYear: 2025,
+              maximumYear: 2030,
             ),
           );
         });

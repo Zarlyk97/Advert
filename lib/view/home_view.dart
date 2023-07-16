@@ -16,21 +16,24 @@ class _HomeViewState extends State<HomeView> {
         centerTitle: true,
         title: const Text('Home View'),
       ),
-      body: Column(
-        children: [
-          ElevatedButton.icon(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => AddProduct(),
-                ),
-              );
-            },
-            icon: const Icon(Icons.publish),
-            label: const Text('Баштоо'),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton.icon(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AddProduct(),
+                  ),
+                );
+              },
+              icon: const Icon(Icons.publish),
+              label: const Text('Баштоо'),
+            ),
+          ],
+        ),
       ),
     );
   }
