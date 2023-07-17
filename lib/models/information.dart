@@ -1,13 +1,6 @@
 import 'dart:convert';
 
 class Information {
-  final List<String>? image;
-  final String title;
-  final String description;
-  final String name;
-  final String dateTime;
-  final String phoneNumber;
-  final String address;
   Information({
     this.image,
     required this.title,
@@ -17,9 +10,16 @@ class Information {
     required this.phoneNumber,
     required this.address,
   });
+  final List<String>? image;
+  final String title;
+  final String description;
+  final String name;
+  final String dateTime;
+  final String phoneNumber;
+  final String address;
 
   Map<String, dynamic> toMap() {
-    return <String, dynamic>{
+    return {
       'image': image,
       'title': title,
       'description': description,
@@ -32,18 +32,18 @@ class Information {
 
   factory Information.fromMap(Map<String, dynamic> map) {
     return Information(
-      image: List<String>.from((map['image'])),
-      title: map['title'] ?? "",
-      description: map['description'] ?? "",
-      name: map['name'] ?? "",
-      dateTime: map['dateTime'] ?? "",
-      phoneNumber: map['phoneNumber'] ?? "",
-      address: map['address'] ?? "",
+      image: List<String>.from(map['image']),
+      title: map['title'] ?? '',
+      description: map['description'] ?? '',
+      name: map['name'] ?? '',
+      dateTime: map['dateTime'] ?? '',
+      phoneNumber: map['phoneNumber'] ?? '',
+      address: map['address'] ?? '',
     );
   }
 
   String toJson() => json.encode(toMap());
 
   factory Information.fromJson(String source) =>
-      Information.fromMap(json.decode(source) as Map<String, dynamic>);
+      Information.fromMap(json.decode(source));
 }
